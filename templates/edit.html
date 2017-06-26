@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <form action="">
+            <label for="username">User name</lable>
+            <input id="username" type="text" name="username" />
+
+        </form>
+
+        <form action="">
+            <label for="password">Password</lable>
+            <input id="password" type="password" name="password"/>
+
+        </form>
+
+        <form action=""> 
+            <label for="verifypassword">Verify Password	</lable>    
+            <input id="verifypassword" type="password" name="verifypassword"/>
+        </form>
+                
+        <form> 
+            <label for="email"> Email (optional)</lable>
+            <input type="text" name="email" />
+
+            </form>
+
+        <form>
+            <input type="submit" value="Submit" />
+        </form>
+
+
+{% endblock %}
