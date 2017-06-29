@@ -2,32 +2,32 @@
 
 {% block content %}
 
-        <form action="">
-            <label for="username">User name</lable>
-            <input id="username" type="text" name="username" />
-
-        </form>
-
-        <form action="">
-            <label for="password">Password</lable>
-            <input id="password" type="password" name="password"/>
-
-        </form>
-
-        <form action=""> 
-            <label for="verifypassword">Verify Password	</lable>    
-            <input id="verifypassword" type="password" name="verifypassword"/>
-        </form>
-                
-        <form> 
-            <label for="email"> Email (optional)</lable>
-            <input type="text" name="email" />
-
-            </form>
-
-        <form>
+        <form action="/signup" method="POST" >
+            <label for="username">User name     
+            <input id="username" type="text" name="username" /></label>
+            {% if error %}
+            <span class='error'>{{ error }}</span>
+            {% endif %}
+            </br>
+            <label for="passwords">Passwords
+            <input id="passwords" type="password" name="passwords" /></label>
+             {% if error_passwords %}
+            <span class='error'>{{ error_passwords }}</span>
+            {% endif %}
+            </br>
+            <label for="verifypasswords">Verify Passwords
+            <input id="verifypasswords" type="password" name="verifypasswords" /></label>
+            </br>
+            <label for="email">Email (optional)
+            <input id="email" type="text" name="email" /></label>
+            </br>
+            
             <input type="submit" value="Submit" />
-        </form>
+        
+
+        </form>  
 
 
 {% endblock %}
+
+
