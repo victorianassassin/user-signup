@@ -2,7 +2,7 @@
 
 {% block content %}
          <style>
-        .error {
+        tb.error {
             font: color red;
         }
          </style>
@@ -10,36 +10,43 @@
 
 
         <form action="/signup" method="POST" >
-            <label for="username">User name     
-            <input id="username" type="text" name="username" /></label>
-            {% if error_username %}
-            <span class='error'>{{ error_username }}</span>
-            {% endif %}
-            </br>
-            <label for="passwords">Password
-            <input id="passwords" type="password" name="passwords" /></label>
-            {% if error_passwords %}
-            <span class='error'>{{ error_passwords }}</span>
-            {% endif %}
-            </br>
-            
-            <label for="verifypasswords">Verify Password
-            <input id="verifypasswords" type="password" name="verifypasswords" /></label>
-            {% if error_verifypasswords %}
-            <span class='error'>{{ error_verifypasswords }}</span>
-            {% endif %}
-            </br>
-            
-            
-            <label for="email">Email (optional)
-            <input id="email" type="text" name="email" /></label>
-            {% if error_email%}
-            <span class='error'>{{ error_email }}</span>
-            {% endif %}
-            </br>
-          
-            
-            <input type="submit" value="Submit" />
+            <table>
+                <tr>
+                    <td><label for="username">User name</lable></td>    
+                    <td><input id="username" type="text" name="username" value="{{username}}" /></td>
+                    {% if error_username %}
+                    <td class="error">{{ error_username }}</td>
+                    {% endif %}
+                </tr>
+
+                <tr>
+                    <td><label for="passwords">Password</lable></td>
+                    <td><input id="passwords" type="password" name="passwords" /></td>
+                    {% if error_passwords %}
+                    <td class="error">{{ error_passwords }}</td>
+                    {% endif %}
+                </tr>
+                
+                <tr>
+                    <td><label for="verifypasswords">Verify Password</label></td>
+                    <td><input id="verifypasswords" type="password" name="verifypasswords" /></td>
+                    {% if error_verifypasswords %}
+                    <td class="error">{{ error_verifypasswords }}</td>
+                    {% endif %}
+                </tr>
+                
+                
+                <tr>
+                    <td><label for="email">Email (optional)</lable></td>
+                    <td><input id="email" type="text" name="email" value="{{email}}" /></td>
+                    {% if error_email%}
+                    <td class="error">{{ error_email }}</td>
+                    {% endif %}
+                </tr>
+
+            </table>
+                
+                <input type="submit" value="Submit" />
         
 
         </form>  
