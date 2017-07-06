@@ -32,8 +32,8 @@ def signup():
         error_verifypasswords = " Passwords don't match"
         
 
-    if  not email:
-         pass #if no email input then pass
+    if  not email=="":
+        
         
         if len(email) < 3 or len(email) > 20 or " " in email or not ("." in email or "@" in email):
             error_email = " That's not a valid email"
