@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, render_template
 import cgi
+import re
 
 app = Flask(__name__)
 
@@ -35,9 +36,12 @@ def signup():
     if  not email=="":
         
         
-        if len(email) < 3 or len(email) > 20 or " " in email or not ("." in email or "@" in email):
+        #if len(email) < 3 or len(email) > 20 or " " in email or not ("." in email or "@" in email):
+            #error_email = " That's not a valid email"
+
+        #used regex for email validation
+        if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", email):
             error_email = " That's not a valid email"
-    
    
      
 
